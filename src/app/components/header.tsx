@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Header: React.FC = () => {
   return (
-    <header className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: 'url("/images/img1.jpg")' }}>
+    <header className="relative w-full h-screen bg-cover bg-center">
       
       <div className="absolute inset-0 bg-black opacity-50"></div>
 

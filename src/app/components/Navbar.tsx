@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Dialog, DialogPanel, PopoverGroup } from '@headlessui/react';
+import { Dialog, DialogPanel} from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function Navbar() {
