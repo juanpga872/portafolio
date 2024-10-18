@@ -2,17 +2,27 @@ import React from "react";
 
 const Header: React.FC = () => {
   return (
-    <header className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: 'url("/images/img1.jpg")' }}>
-      
+    <header className="relative w-full h-screen">
+      {/* Video de fondo */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/video/header.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      {/* Overlay para oscurecer el video */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      
+      {/* Contenido del header */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeIn">
           Welcome to My Portfolio
         </h1>
         <p className="text-lg md:text-2xl mb-8 animate-fadeIn delay-2s">
-        I&apos;m Juan Pablo, a passionate developer
+          I&apos;m Juan Pablo, a passionate developer
         </p>
 
         <a
@@ -27,3 +37,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+

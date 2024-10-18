@@ -1,12 +1,18 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
 export default function About() {
     return (
-        <div id="about">
-            <section id="about" className="py-12 bg-gray-50">
+        <div >
+            <section id="about" className="p-32 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-                    <Image src="/images/yo.jpeg" alt="Your Photo" className="rounded-full w-40 h-40 mb-6 md:mb-0 md:mr-8" />
+                    <Image 
+                        src="/images/yo.jpeg" 
+                        alt="Your Photo" 
+                        width={400} // Ancho de la imagen
+                        height={400} // Alto de la imagen
+                        className="rounded-full w-80 h-80 mb-52 md:mb-0 md:mr-52" 
+                    />
                     <div>
                         <h2 className="text-3xl font-bold mb-4">About Me</h2>
                         <p className="text-gray-600">
@@ -19,7 +25,7 @@ export default function About() {
                     </div>
                 </div>
             </section>
-
         </div>
-    )
+    );
 }
+

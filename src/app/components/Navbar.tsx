@@ -8,22 +8,22 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative bg-transparent">
+    <header className="bg-current">
       <nav
-        className="mx-auto max-w-7xl p-6 lg:px-8 flex items-center justify-center"
+        className="mx-auto max-w-7xl p-6 lg:px-8 flex items-center justify-center bg-transparent"
         aria-label="Global"
       >
         <div className="hidden lg:flex justify-center w-full space-x-10">
-          <a href="#about" className="text-lg font-bold text-black hover:text-gray-300">
+          <a href="#about" className="text-lg font-bold text-white hover:text-gray-600">
             About
           </a>
-          <a href="#projects" className="text-lg font-bold text-black hover:text-gray-300">
+          <a href="#projects" className="text-lg font-bold text-white hover:text-gray-600">
             Projects
           </a>
-          <a href="#skills" className="text-lg font-bold text-black hover:text-gray-300">
+          <a href="#skills" className="text-lg font-bold text-white hover:text-gray-600">
             Skills
           </a>
-          <a href="#contact" className="text-lg font-bold text-black hover:text-gray-300">
+          <a href="#contact" className="text-lg font-bold text-white hover:text-gray-600">
             Contact
           </a>
         </div>
@@ -69,11 +69,6 @@ export default function Navbar() {
         </DialogPanel>
       </Dialog>
 
-      {/* Optional: Background Image */}
-      <div
-        className="absolute inset-0 -z-10 h-full w-full bg-cover bg-center opacity-60"
-        style={{ backgroundImage: 'url("/images/img1.jpg")' }}
-      />
     </header>
   );
 }
