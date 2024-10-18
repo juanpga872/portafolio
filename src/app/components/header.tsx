@@ -2,7 +2,7 @@ import React from "react";
 
 const Header: React.FC = () => {
   return (
-    <header className="relative w-full h-screen bg-cover bg-center">
+    <header className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: 'url("/images/img1.jpg")' }}>
       
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
@@ -12,7 +12,7 @@ const Header: React.FC = () => {
           Welcome to My Portfolio
         </h1>
         <p className="text-lg md:text-2xl mb-8 animate-fadeIn delay-2s">
-          I'm Juan Pablo, a passionate developer
+        I&apos;m Juan Pablo, a passionate developer
         </p>
 
         <a
