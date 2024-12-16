@@ -1,36 +1,30 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
 
 export default function Contact() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
+    const form = useRef<HTMLFormElement>(null);
 
-    const handleChange = (e:any) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
-    };
-
-    const handleSubmit = (e:any) => {
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        
+        if (!form.current) return;
 
         emailjs
-            .send(
-                'service_g3cnvf6', // Service ID
-                'template_9wgfuj6', // Template ID
-                formData,
-                'f1F2MVKHMdI_1HdQR' // Public Key
+            .sendForm(
+                'service_g3cnvf6', // Reemplaza con tu Service ID
+                'template_9wgfuj6', // Reemplaza con tu Template ID
+                form.current,
+                'f1F2MVKHMdI_1HdQR' // Reemplaza con tu Public Key
             )
             .then(
-                () => {
-                    alert('Mensaje enviado con éxito.');
-                    setFormData({ name: '', email: '', message: '' }); // Limpia el formulario
+                (result) => {
+                    console.log(result.text);
+                    alert('Message sent successfully!');
                 },
-                () => {
-                    alert('Hubo un error al enviar el mensaje, inténtalo de nuevo.');
+                (error) => {
+                    console.log(error.text);
+                    alert('An error occurred, please try again.');
                 }
             );
     };
@@ -40,29 +34,23 @@ export default function Contact() {
             <section id="contact" className="p-32 bg-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-center mb-6">Contact Me</h2>
-                    <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6">
+                    <form ref={form} onSubmit={sendEmail} className="max-w-lg mx-auto space-y-6">
                         <input
                             type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
+                            name="user_name"
                             className="w-full p-4 border border-gray-300 rounded-lg"
                             placeholder="Your Name"
                             required
                         />
                         <input
                             type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
+                            name="user_email"
                             className="w-full p-4 border border-gray-300 rounded-lg"
                             placeholder="Your Email"
                             required
                         />
                         <textarea
                             name="message"
-                            value={formData.message}
-                            onChange={handleChange}
                             className="w-full p-4 border border-gray-300 rounded-lg"
                             placeholder="Your Message"
                             required
@@ -76,4 +64,3 @@ export default function Contact() {
         </div>
     );
 }
-
