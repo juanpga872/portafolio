@@ -25,11 +25,11 @@ export default function Contact() {
                 'f1F2MVKHMdI_1HdQR' // Public Key
             )
             .then(
-                (result) => {
+                () => {
                     alert('Mensaje enviado con éxito.');
                     setFormData({ name: '', email: '', message: '' }); // Limpia el formulario
                 },
-                (error) => {
+                () => {
                     alert('Hubo un error al enviar el mensaje, inténtalo de nuevo.');
                 }
             );
