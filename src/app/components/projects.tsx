@@ -25,7 +25,7 @@ export default function Projects() {
               <img src="/images/projects/FairTour.PNG" alt="Project 2" className="w-full h-48 object-cover transition duration-300 hover:opacity-90" />
               <div className="p-6">
                 <h3 className="text-lg font-semibold mb-2">Fair Tour</h3>
-                <p className="text-gray-600 mb-4">pagina web para la promocionar y facilitar tours de viajes en colombia para extrangeros de manera segura</p>
+                <p className="text-gray-600 mb-4">Pagina web para la promocionar y facilitar tours de viajes en colombia para extrangeros de manera segura</p>
                 <a href="#" className="text-blue-500 hover:underline">View Project</a>
               </div>
             </div>
@@ -34,7 +34,7 @@ export default function Projects() {
               <img src="/images/projects/x.png" alt="Project 3" className="w-full h-48 object-cover transition duration-300 hover:opacity-90" />
               <div className="p-6">
                 <h3 className="text-lg font-semibold mb-2"> X </h3>
-                <p className="text-gray-600 mb-4">proyecto que simula la navehacion de la aplicacion X twiter en flutter</p>
+                <p className="text-gray-600 mb-4">Proyecto que simula la navegacion de la aplicacion X twiter en flutter</p>
                 <a href="https://github.com/juanpga872/proyecto-x" className="text-blue-500 hover:underline">View Project</a>
               </div>
             </div>
